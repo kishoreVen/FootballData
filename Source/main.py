@@ -12,4 +12,6 @@ playerTables    = playerSoup.find_all('table')
 playerRecStats  = playerTables[0]
 playerDataFrame = pandas.read_html(str(playerRecStats))[0]
 
+# Iterate over player data frame and place the data in respective stats table
+
 print(playerDataFrame.info())
