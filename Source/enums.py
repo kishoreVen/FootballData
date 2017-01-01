@@ -7,6 +7,10 @@ class EGameResult(Enum):
     T = 1
     L = 2
 
+class EGameLoc(Enum):
+    HOME = 0
+    AWAY = 1
+
 class EFootballTeams(Enum):
     ARI = 0
     ATL = 1
@@ -43,6 +47,7 @@ class EFootballTeams(Enum):
     NUM = 32
 
     def find(value):
+        value = value.upper()
         for teamacronym in EFootballTeams:
             if teamacronym.name == value:
                 return teamacronym
