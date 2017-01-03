@@ -3,13 +3,23 @@ from enum import Enum
 # EGameResult - Enum that represents possible game results
 # W - Win, T - Tie, L - Loss
 class EGameResult(Enum):
-    W = 0
-    T = 1
-    L = 2
+    W   = 0
+    D   = 1
+    L   = 2
+    NUM = 3
+
+    def find(value):
+        value = value.upper()
+        for result in EGameResult:
+            if result.name == value:
+                return result
+
+        return EGameResult.NUM
 
 class EGameLoc(Enum):
     HOME = 0
     AWAY = 1
+    NUM  = 2
 
 class EFootballTeams(Enum):
     ARI = 0
